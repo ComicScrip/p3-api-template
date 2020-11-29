@@ -3,9 +3,6 @@ const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const { inTestEnv, inProdEnv, SERVER_PORT } = require('./env');
-const handleServerInternalError = require('./middlewares/handleServerInternalError');
-const handleValidationError = require('./middlewares/handleValidationError');
-const handleRecordNotFoundError = require('./middlewares/handleRecordNotFoundError');
 
 const app = express();
 
@@ -25,9 +22,6 @@ require('./routes')(app);
 
 // post-route middlewares
 app.set('x-powered-by', false);
-app.use(handleRecordNotFoundError);
-app.use(handleValidationError);
-app.use(handleServerInternalError);
 
 // server setup
 const server = app.listen(SERVER_PORT, () => {

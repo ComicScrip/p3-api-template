@@ -1,6 +1,6 @@
 {
-  "name": "contacts-api",
-  "version": "1.0.0",
+  "name": "p3-api",
+  "version": "0.0.1",
   "description": "",
   "main": "app.js",
   "scripts": {
