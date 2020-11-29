@@ -22,9 +22,9 @@ Copy and execute those commands one by one in a terminal and you should be good 
 #### Docker-engine
 
 ```sh
-# Remove previous doker installs
+# Clean previous docker installation
 sudo apt-get remove docker docker-engine docker.io containerd runc
-# Update packages list
+# Update package list
 sudo apt-get update
 # Install docker dependencies
 sudo apt-get install \
@@ -35,12 +35,12 @@ sudo apt-get install \
     software-properties-common
 # Download docker's GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-# Add Docker stable repo
+# Add docker stable repo
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
-# Update packages list
+# Update package list
 sudo apt-get update
 # Install docker packages
 sudo apt-get install docker-ce docker-ce-cli containerd.io
