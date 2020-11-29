@@ -13,7 +13,6 @@ const inProdEnv = getEnv('NODE_ENV') === 'production';
 const inDevEnv = getEnv('NODE_ENV') === 'dev';
 const inTestEnv = getEnv('NODE_ENV') === 'test';
 
-const API_KEY = getEnv(`API_KEY`);
 const SERVER_PORT = getEnv(`SERVER_PORT${inTestEnv ? '_TEST' : ''}`);
 
 const DB_HOST = getEnv(`DB_HOST${inTestEnv ? '_TEST' : ''}`);
@@ -28,7 +27,6 @@ module.exports = {
   inProdEnv,
   inDevEnv,
   SERVER_PORT,
-  API_KEY,
   DB_HOST,
   DB_PORT,
   DB_USER,
