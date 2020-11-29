@@ -9,7 +9,7 @@ Copy the environnement variables :
 ```
 cp .env.sample .env
 ```
-This `.env` file allows to change the way the Node server connects to the database, but you probably won't have to change any of those variables unless you want to deploy the app yourself and connect it to a specific DB.
+This `.env` file allows to change the way the Node server connects to the database, but you probably won't have to change any of those variables unless you want to deploy the app yourself or connect it to a specific DB.
 
 ## With Docker (recommanded)
 
@@ -61,9 +61,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-### Windows / Mac
+### Windows / MacOS
 
-You can install Docker & Docker-compose via [Docker-Desktop](https://www.docker.com/products/docker-desktop).
+You can install Docker-engine & Docker-compose via [Docker-Desktop](https://www.docker.com/products/docker-desktop).
 
 ### Run the app
 
@@ -121,13 +121,6 @@ NAME=splitNameOnUsers npm run create-db-migration
 To apply the changes that have not yet been synced to the database :
 ```
 npm run migrate-db
-```
-
-## Applying migrations to local databases using Docker
-
-If you want to manually run migrations while running the app with docker, you can do :
-```sh 
-docker exec server npm run migrate-db
 ```
 
 # API Docs
