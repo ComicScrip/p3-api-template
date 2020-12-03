@@ -49,7 +49,7 @@ class Database {
     if (!inTestEnv)
       throw new Error('Cannot truncate all table if not in test env !');
     const truncates = await this.getTableNames().then((tableNames) =>
-      tableNames.map((name) => `TRUNCATE ${name};`).join(' ')
+       tableNames.map((name) => `TRUNCATE \`${name}\`;`).join(' ')
     );
     const sql = `SET FOREIGN_KEY_CHECKS=0; ${truncates} SET FOREIGN_KEY_CHECKS=1;`;
     return this.query(sql);
